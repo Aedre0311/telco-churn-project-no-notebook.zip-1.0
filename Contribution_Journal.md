@@ -1,0 +1,16 @@
+# Contribution Journal
+
+**Name:** Andre Ellis
+**Course:** ITAI1371
+**Project:** Telco Customer Churn: Exploratory Data Analysis and Data Pre-processing
+**Team:** Solo project (one member)
+
+I completed this project on my own, so every part of it is my own contribution. I started by choosing the dataset. I picked the Telco Customer Churn dataset from Kaggle because it has 7,043 rows, a clear binary target, a mix of numeric and categorical features, and an imbalanced class. It also contains hidden missing values, which gave me real cleanup work to do instead of a dataset that was already tidy. Choosing a dataset that I could also use for the finals was an important part of the decision, because I will be training several models on it later.
+
+Once I had the data, I set up the Jupyter notebook and split the data in Python, 70% for training and 30% for testing, stratified on the churn column so both sets kept the same class ratio. I did this before any analysis, so that the exploratory work and every fitted step would use the training set only and the test set would stay untouched. I then carried out the exploratory data analysis on the training data. I plotted the class distribution, the histograms and boxplots of the numeric features, the churn rate for each category, and a correlation heatmap, and I used what I saw to decide what the cleanup should focus on.
+
+The cleanup itself was the core of my work. I found that TotalCharges contained blank values that pandas did not report as missing, converted them to proper missing values, and filled them with the training median. I engineered six new features: tenure groups, average monthly spend, the difference between current and average monthly charges, the number of subscribed services, a flag for customers with both online security and tech support, and a flag for automatic payment. I encoded the categorical columns using binary encoding, ordinal encoding and one-hot encoding, depending on the column. I applied a log transform to the skewed TotalCharges column and scaled the numeric features with StandardScaler, fitted on the training data and then applied to the test data. Finally, I balanced the training set with SMOTE, plotted the class counts before and after, and saved the clean training and test datasets from code, without editing any data by hand.
+
+I also wrote all of the documentation. That includes the one-page proposal describing the dataset and what I plan to accomplish, the file with the original dataset URL, the README, this contribution journal and the reflection journal. At the end I set up the GitHub repository, uploaded the files, and submitted the repository URL in Canvas.
+
+The step that took the most effort was getting the notebook to run cleanly from start to finish. A single error early in the notebook caused errors in every cell after it, so I had to learn to trace a problem back to the first failing cell and to make the notebook find its data file and install missing packages on its own. The step that taught me the most was the train and test split, because deciding to split first changed how I approached every other step. If I did this project again, I would set up and test the environment and file paths before writing any analysis code, and I would write the documentation as I went instead of at the end.

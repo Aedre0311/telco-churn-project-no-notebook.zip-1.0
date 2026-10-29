@@ -1,0 +1,3 @@
+Original dataset URL (Kaggle): https://www.kaggle.com/datasets/blastchar/telco-customer-churn
+File: WA_Fn-UseC_-Telco-Customer-Churn.csv
+Rows: ~7,043 | Columns: 21 | Target: Churn (Yes/No)
